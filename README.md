@@ -1,0 +1,2 @@
+# Proper
+Seed to smoke
