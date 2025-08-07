@@ -1,0 +1,29 @@
+
+For a Data Scientist
+ * Project Charter
+   Defines the business problem, project objectives, and success metrics.
+ * Data Requirements Specification
+   Outlines the necessary data sources, formats, and access permissions.
+ * Exploratory Data Analysis (EDA) Report
+   Presents initial findings, visualizations, and statistical summaries of the data.
+ * Feature Engineering Plan
+   Describes the process of creating predictive variables from raw data.
+ * Model Design Document
+   Details the proposed machine learning algorithms and validation strategies.
+ * Model Evaluation Report
+   Summarizes the performance of the final model using relevant metrics.
+For a Software Engineer
+ * Product Requirements Document (PRD)
+   Details the application's features, user stories, and functional requirements.
+ * System Architecture Document
+   Provides a high-level overview of the technology stack, components, and their interactions.
+ * Technical Design Document (TDD)
+   Offers a detailed blueprint for specific components, including API design and database schemas.
+ * API Documentation
+   A technical manual explaining how to interact with the application's APIs.
+ * Deployment Plan
+   Outlines the process for continuous integration, delivery, and infrastructure management.
+ * Security Threat Model
+   Identifies potential security vulnerabilities and the strategies to mitigate them.
+ * Quality Assurance & Test Plan
+   Describes the strategy for unit, integration, and end-to-end testing.

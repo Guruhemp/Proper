@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Physics World: Floating, Drifting, Interactive</title>
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; background: #181a1b; }
+    #ui { position: absolute; top: 10px; left: 10px; z-index: 10; color: #fff; font-family: monospace; }
+    .portal { position: absolute; border-radius: 50%; background: radial-gradient(circle, #fff7, #1fa 60%, #181a1b 100%); width: 100px; height: 100px; pointer-events: auto; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <h3>Physics Playground</h3>
+    <p>Drag islands. Click portals. Watch the world drift.</p>
+  </div>
+  <!-- Portals for navigation -->
+  <div class="portal" id="portal1" style="top:40vh;left:5vw;"></div>
+  <div class="portal" id="portal2" style="top:70vh;left:80vw;"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script>
+    // Aliases for Matter.js modules
+    const {
+      Engine, Render, World, Bodies, Body, Mouse, MouseConstraint, Events, Composite
+    } = Matter;
+
+    // Create engine and world
+    const engine = Engine.create();
+    const world = engine.world;
+
+    // Create renderer
+    const render = Render.create({
+      element: document.body,
+      engine: engine,
+      options: {
+        width: window.innerWidth,
+        height: window.innerHeight,
+        wireframes: false,
+        background: '#181a1b',
+        pixelRatio: window.devicePixelRatio
+      }
+    });
+
+    // Floating islands (content blocks)
+    const islands = [
+      Bodies.circle(300, 220, 80, { restitution: 0.9, render: { fillStyle: '#7FFFD4' }, label: "island1" }),
+      Bodies.rectangle(650, 320, 180, 60, { restitution: 0.8, render: { fillStyle: '#FF69B4' }, label: "island2" }),
+      Bodies.polygon(1000, 180, 6, 70, { restitution: 0.95, render: { fillStyle: '#FFD700' }, label: "island3" }),
+      Bodies.rectangle(900, 500, 120, 120, { restitution: 0.7, render: { fillStyle: '#8A2BE2' }, label: "island4" })
+    ];
+
+    // Invisible boundaries
+    const boundaries = [
+      Bodies.rectangle(window.innerWidth / 2, -30, window.innerWidth, 60, { isStatic: true }),
+      Bodies.rectangle(window.innerWidth / 2, window.innerHeight + 30, window.innerWidth, 60, { isStatic: true }),
+      Bodies.rectangle(-30, window.innerHeight / 2, 60, window.innerHeight, { isStatic: true }),
+      Bodies.rectangle(window.innerWidth + 30, window.innerHeight / 2, 60, window.innerHeight, { isStatic: true })
+    ];
+
+    // Add everything to the world
+    World.add(world, [...islands, ...boundaries]);
+
+    // Run engine and renderer
+    Engine.run(engine);
+    Render.run(render);
+
+    // Mouse/touch controls for dragging
+    const mouse = Mouse.create(render.canvas);
+    const mouseConstraint = MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.3,
+        render: { visible: false }
+      }
+    });
+    World.add(world, mouseConstraint);
+    render.mouse = mouse;
+
+    // Gentle drifting: apply small, random forces to all islands
+    setInterval(() => {
+      islands.forEach(body => {
+        Body.applyForce(body, body.position, {
+          x: (Math.random() - 0.5) * 0.0015,
+          y: (Math.random() - 0.5) * 0.0015
+        });
+      });
+    }, 120);
+
+    // Orbital motion: islands slowly rotate around a virtual point
+    setInterval(() => {
+      islands.forEach((body, i) => {
+        const angle = 0.002 * (i % 2 === 0 ? 1 : -1); // alternate directions
+        Body.rotate(body, angle);
+      });
+    }, 60);
+
+    // Responsive canvas
+    window.addEventListener('resize', () => {
+      render.canvas.width = window.innerWidth;
+      render.canvas.height = window.innerHeight;
+      // Optionally, update boundaries here if you want them to adapt
+    });
+
+    // PORTAL INTERACTION: teleport islands or trigger effects
+    function portalJump(island, x, y) {
+      Body.setPosition(island, { x, y });
+      Body.setVelocity(island, { x: 0, y: 0 });
+    }
+
+    document.getElementById('portal1').onclick = () => {
+      portalJump(islands[0], 100 + Math.random() * 200, 100 + Math.random() * 200);
+    };
+    document.getElementById('portal2').onclick = () => {
+      portalJump(islands[1], window.innerWidth - 200 - Math.random() * 200, window.innerHeight - 200 - Math.random() * 200);
+    };
+
+    // Custom "gravity field": user can pull islands toward cursor by holding spacebar
+    let gravityActive = false;
+    document.addEventListener('keydown', e => {
+      if (e.code === 'Space') gravityActive = true;
+    });
+    document.addEventListener('keyup', e => {
+      if (e.code === 'Space') gravityActive = false;
+    });
+
+    function attractIslandsToCursor() {
+      if (gravityActive) {
+        const mousePos = mouse.position;
+        islands.forEach(body => {
+          const dx = mousePos.x - body.position.x;
+          const dy = mousePos.y - body.position.y;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          const forceMag = 0.00008;
+          Body.applyForce(body, body.position, {
+            x: dx / dist * forceMag,
+            y: dy / dist * forceMag
+          });
+        });
+      }
+      requestAnimationFrame(attractIslandsToCursor);
+    }
+    attractIslandsToCursor();
+
+    // Example: trigger a "cosmic wave" (all islands pulse outward) on double-click
+    render.canvas.addEventListener('dblclick', () => {
+      islands.forEach(body => {
+        Body.applyForce(body, body.position, {
+          x: (body.position.x - window.innerWidth / 2) * 0.0005,
+          y: (body.position.y - window.innerHeight / 2) * 0.0005
+        });
+      });
+    });
+
+    // Advanced: Add or remove islands dynamically
+    function addIsland() {
+      const newIsland = Bodies.circle(
+        200 + Math.random() * (window.innerWidth - 400),
+        100 + Math.random() * (window.innerHeight - 200),
+        40 + Math.random() * 60,
+        { restitution: 0.85, render: { fillStyle: '#'+Math.floor(Math.random()*16777215).toString(16) } }
+      );
+      islands.push(newIsland);
+      World.add(world, newIsland);
+    }
+    // Example: Add an island with "A" key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'a' || e.key === 'A') addIsland();
+    });
+
+    // More: You can connect islands with constraints, make them "merge" on collision, or trigger audio/visual effects on interaction.
+
+    // For further learning and advanced features, check out the Matter.js docs and tutorials[2][3][4][5][6][8].
+
+  </script>
+</body>
+</html>

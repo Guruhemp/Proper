@@ -1,0 +1,132 @@
+{
+  "name": "NebulaCode",
+  "short_name": "NebulaCode",
+  "description": "Zero-install, AI-powered, browser-native IDE optimized for mobile-first coding with voice interaction and offline support.",
+  "version": "1.0.0",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/screen1.png",
+      "sizes": "540x720",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshots/screen2.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "developer-tools",
+    "education"
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://nebula-code.example.com",
+      "id": "nebula-code"
+    }
+  ],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "New Project",
+      "short_name": "New Project",
+      "description": "Create a new coding project",
+      "url": "/new",
+      "icons": [{ "src": "icons/shortcut-new.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Open Recent",
+      "short_name": "Recent",
+      "description": "Open recent projects",
+      "url": "/recent",
+      "icons": [{ "src": "icons/shortcut-recent.png", "sizes": "96x96" }]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "nebula",
+      "url": "/?project=%s"
+    }
+  ],
+  "launch_handler": {
+    "client_mode": ["focus-existing"]
+  },
+  "serviceworker": {
+    "src": "/service-worker.js",
+    "scope": "/",
+    "type": "classic"
+  },
+  "lang": "en-US",
+  "dir": "ltr",
+  "capture_links": "navigate",
+  "screens": [
+    {
+      "id": "home",
+      "title": "NebulaCode Home",
+      "url": "/"
+    },
+    {
+      "id": "editor",
+      "title": "Editor",
+      "url": "/editor"
+    }
+  ]
+}

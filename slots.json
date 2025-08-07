@@ -1,0 +1,409 @@
+{
+  "slots": [
+    {
+      "name": "strain",
+      "type": "categorical",
+      "description": "Specific cannabis strain or cultivar mentioned by the user (e.g., Blue Dream, OG Kush, Gelato)",
+      "examples": ["Blue Dream", "OG Kush", "Gelato", "Sour Diesel", "Girl Scout Cookies"],
+      "required": true,
+      "prompts": ["Which strain are you interested in?", "Please specify the strain name."]
+    },
+    {
+      "name": "quantity",
+      "type": "numerical",
+      "description": "Amount or volume of cannabis product requested or discussed (e.g., 1 gram, 3.5 grams, 1/8 oz)",
+      "examples": ["1 gram", "3.5 grams", "1/8 oz", "10 mg", "500 mg"],
+      "units": ["grams", "mg", "oz", "pieces"],
+      "required": true,
+      "prompts": ["How much do you want?", "Please provide the quantity."]
+    },
+    {
+      "name": "product_type",
+      "type": "categorical",
+      "description": "Category or form of cannabis product (e.g., flower, edible, vape, tincture, concentrate)",
+      "examples": ["flower", "edible", "vape", "tincture", "concentrate", "topical"],
+      "required": false,
+      "prompts": ["What type of product are you looking for?", "Please specify the product type."]
+    },
+    {
+      "name": "effect",
+      "type": "categorical",
+      "description": "Desired or experienced effects from cannabis consumption (e.g., relaxed, euphoric, focused, sleepy, energetic)",
+      "examples": ["relaxed", "euphoric", "focused", "sleepy", "energetic", "creative", "uplifted"],
+      "required": false,
+      "prompts": ["What effects are you looking for?", "Describe the kind of experience you want."]
+    },
+    {
+      "name": "flavor",
+      "type": "categorical",
+      "description": "Flavor or aroma profile preferences or descriptions (e.g., citrus, earthy, pine, berry, diesel)",
+      "examples": ["citrus", "earthy", "pine", "berry", "diesel", "sweet", "spicy"],
+      "required": false,
+      "prompts": ["What flavors do you prefer?", "Do you like any particular aroma?"]
+    },
+    {
+      "name": "brand",
+      "type": "categorical",
+      "description": "Cannabis brand or manufacturer referenced (e.g., Kiva, Stiiizy, Raw Garden)",
+      "examples": ["Kiva", "Stiiizy", "Raw Garden", "Canndescent", "Jetty"],
+      "required": false,
+      "prompts": ["Which brand do you prefer?", "Is there a brand you're interested in?"]
+    },
+    {
+      "name": "condition",
+      "type": "categorical",
+      "description": "Medical or wellness condition user wants to address (e.g., anxiety, insomnia, chronic pain, stress)",
+      "examples": ["anxiety", "insomnia", "chronic pain", "stress", "depression"],
+      "required": false,
+      "prompts": ["What condition are you seeking relief from?", "Are you using cannabis for any specific health issue?"]
+    },
+    {
+      "name": "dosage",
+      "type": "numerical",
+      "description": "Recommended or requested amount of active compounds (e.g., 10mg THC, 1:1 CBD:THC ratio)",
+      "examples": ["10mg THC", "20mg CBD", "1:1 ratio", "5mg THC", "50mg CBD"],
+      "units": ["mg", "ratio"],
+      "required": false,
+      "prompts": ["What dosage are you considering?", "Specify the THC/CBD amount or ratio."]
+    },
+    {
+      "name": "delivery_method",
+      "type": "categorical",
+      "description": "Method of consumption or delivery (e.g., smoking, vaping, ingestion, sublingual, topical)",
+      "examples": ["smoking", "vaping", "ingestion", "sublingual", "topical"],
+      "required": false,
+      "prompts": ["How do you plan to consume?", "What delivery method do you prefer?"]
+    },
+    {
+      "name": "location",
+      "type": "geographical",
+      "description": "User's geographic location, city, state, or zip code for service availability and compliance",
+      "examples": ["Los Angeles", "Denver, CO", "90210", "Toronto"],
+      "required": true,
+      "prompts": ["Where are you located?", "Please provide your city or zip code."]
+    },
+    {
+      "name": "time_of_use",
+      "type": "categorical",
+      "description": "Preferred or actual time of cannabis use (e.g., morning, afternoon, evening, nighttime)",
+      "examples": ["morning", "afternoon", "evening", "nighttime", "before bed"],
+      "required": false,
+      "prompts": ["When do you plan to use it?", "What time of day will you be consuming?"]
+    },
+    {
+      "name": "grow_method",
+      "type": "categorical",
+      "description": "Cultivation technique used (e.g., indoor, outdoor, hydroponic, organic)",
+      "examples": ["indoor", "outdoor", "hydroponic", "organic", "greenhouse"],
+      "required": false,
+      "prompts": ["What grow method are you interested in?", "How was the cannabis cultivated?"]
+    },
+    {
+      "name": "terpene",
+      "type": "categorical",
+      "description": "Specific terpene profiles mentioned or desired (e.g., myrcene, limonene, caryophyllene)",
+      "examples": ["myrcene", "limonene", "caryophyllene", "pinene", "linalool"],
+      "required": false,
+      "prompts": ["Are there any terpenes you prefer?", "Which terpene profile do you want?"]
+    },
+    {
+      "name": "tolerance_level",
+      "type": "categorical",
+      "description": "User's cannabis tolerance or experience level (e.g., beginner, intermediate, high tolerance)",
+      "examples": ["beginner", "intermediate", "high tolerance", "occasional user"],
+      "required": false,
+      "prompts": ["What is your tolerance level?", "How experienced are you with cannabis?"]
+    },
+    {
+      "name": "price_range",
+      "type": "range",
+      "description": "Desired price range for cannabis products",
+      "examples": ["$10-$30", "under $50", "premium tier", "$20-$100"],
+      "units": ["USD", "currency"],
+      "required": false,
+      "prompts": ["What price range are you looking for?", "Specify your budget for products."]
+    },
+    {
+      "name": "thc_content",
+      "type": "numerical",
+      "description": "Amount or percentage of THC in product (e.g., 20%, 15mg)",
+      "examples": ["20%", "15mg", "18% THC", "25mg"],
+      "units": ["%", "mg"],
+      "required": false,
+      "prompts": ["What THC content do you prefer?", "Specify the THC level."]
+    },
+    {
+      "name": "cbd_content",
+      "type": "numerical",
+      "description": "Amount or percentage of CBD in product (e.g., 5%, 50mg)",
+      "examples": ["5%", "50mg", "10% CBD", "20mg"],
+      "units": ["%", "mg"],
+      "required": false,
+      "prompts": ["What CBD content do you prefer?", "Specify the CBD level."]
+    },
+    {
+      "name": "age",
+      "type": "numerical",
+      "description": "User's age for legal compliance and appropriate recommendations",
+      "examples": ["21", "25", "30", "45"],
+      "required": true,
+      "prompts": ["Please confirm your age.", "How old are you?"]
+    },
+    {
+      "name": "language",
+      "type": "categorical",
+      "description": "Preferred language for communication and interface",
+      "examples": ["English", "Spanish", "French", "German", "Chinese"],
+      "required": false,
+      "prompts": ["Which language do you prefer?", "Select your language."]
+    },
+    {
+      "name": "avatar_style",
+      "type": "categorical",
+      "description": "Preferred avatar or AI assistant persona style",
+      "examples": ["Chill Hippie", "Futuristic Bot", "Streetwise Herbalist", "Zen Guru"],
+      "required": false,
+      "prompts": ["Choose your assistant style.", "What avatar personality do you prefer?"]
+    },
+    {
+      "name": "payment_method",
+      "type": "categorical",
+      "description": "Preferred payment type or method",
+      "examples": ["crypto", "credit card", "debit", "cash on delivery", "Apple Pay"],
+      "required": false,
+      "prompts": ["What payment method will you use?", "Select your payment option."]
+    },
+    {
+      "name": "delivery_time",
+      "type": "temporal",
+      "description": "Preferred or requested delivery time or window",
+      "examples": ["ASAP", "within 2 hours", "tonight", "next day", "weekend"],
+      "required": false,
+      "prompts": ["When do you want delivery?", "Specify delivery time preference."]
+    },
+    {
+      "name": "usage_purpose",
+      "type": "categorical",
+      "description": "User's intent or reason for cannabis use",
+      "examples": ["medical relief", "recreation", "creativity boost", "sleep aid", "pain management"],
+      "required": false,
+      "prompts": ["What is your purpose for using cannabis?", "Why are you using cannabis?"]
+    },
+    {
+      "name": "interaction_mode",
+      "type": "categorical",
+      "description": "Preferred interaction method with the platform or AI",
+      "examples": ["voice", "text", "AR", "VR", "chat"],
+      "required": false,
+      "prompts": ["How do you want to interact?", "Choose interaction mode."]
+    },
+    {
+      "name": "product_name",
+      "type": "categorical",
+      "description": "Specific product name referenced by the user",
+      "examples": ["Camino Gummies", "Pax Era Pod", "Raw Garden Live Resin"],
+      "required": false,
+      "prompts": ["Which product are you referring to?", "Specify the product name."]
+    },
+    {
+      "name": "store",
+      "type": "categorical",
+      "description": "Dispensary or retail location mentioned",
+      "examples": ["MedMen", "Eaze", "GanjaMart", "WeedMaps", "Dutchie"],
+      "required": false,
+      "prompts": ["Which store are you interested in?", "Mention the dispensary."]
+    },
+    {
+      "name": "subscription_plan",
+      "type": "categorical",
+      "description": "Subscription or membership tier",
+      "examples": ["free", "premium", "monthly delivery", "VIP"],
+      "required": false,
+      "prompts": ["Which subscription plan do you want?", "Select your plan."]
+    },
+    {
+      "name": "promo_code",
+      "type": "alphanumeric",
+      "description": "Promotional or discount code used or requested",
+      "examples": ["SAVE20", "GANJAGURU10", "FIRSTORDER"],
+      "required": false,
+      "prompts": ["Enter your promo code.", "Do you have a discount code?"]
+    },
+    {
+      "name": "packaging_type",
+      "type": "categorical",
+      "description": "Preferred packaging style or feature",
+      "examples": ["eco-friendly", "resealable", "discreet", "child-proof"],
+      "required": false,
+      "prompts": ["What packaging do you prefer?", "Specify packaging requirements."]
+    },
+    {
+      "name": "review_sentiment",
+      "type": "sentiment",
+      "description": "Tone or sentiment of user reviews or feedback",
+      "examples": ["positive", "neutral", "negative"],
+      "required": false,
+      "prompts": ["How would you rate this product?", "Leave your feedback."]
+    },
+    {
+      "name": "cultivation_stage",
+      "type": "categorical",
+      "description": "Stage of cannabis cultivation referenced",
+      "examples": ["seedling", "vegetative", "flowering", "harvest"],
+      "required": false,
+      "prompts": ["What growth stage are you asking about?", "Specify cultivation phase."]
+    },
+    {
+      "name": "grow_light_type",
+      "type": "categorical",
+      "description": "Type of grow lighting mentioned or preferred",
+      "examples": ["LED", "HPS", "CMH", "sunlight"],
+      "required": false,
+      "prompts": ["Which grow light type do you use?", "Specify lighting system."]
+    },
+    {
+      "name": "soil_type",
+      "type": "categorical",
+      "description": "Type of growing medium used or preferred",
+      "examples": ["coco coir", "peat moss", "living soil", "hydroponic"],
+      "required": false,
+      "prompts": ["What soil type do you prefer?", "Specify your growing medium."]
+    },
+    {
+      "name": "nutrient_brand",
+      "type": "categorical",
+      "description": "Brand of nutrients or fertilizers used",
+      "examples": ["FoxFarm", "General Hydroponics", "Advanced Nutrients"],
+      "required": false,
+      "prompts": ["Which nutrient brand do you use?", "Specify fertilizer brand."]
+    },
+    {
+      "name": "experience_level",
+      "type": "categorical",
+      "description": "User’s cannabis knowledge or growing experience",
+      "examples": ["novice", "intermediate", "expert"],
+      "required": false,
+      "prompts": ["What is your experience level?", "How familiar are you with cannabis?"]
+    },
+    {
+      "name": "session_duration",
+      "type": "temporal",
+      "description": "Expected or planned duration of cannabis use session",
+      "examples": ["30 minutes", "2 hours", "all day"],
+      "required": false,
+      "prompts": ["How long will your session last?", "Specify duration."]
+    },
+    {
+      "name": "delivery_service",
+      "type": "categorical",
+      "description": "Name of cannabis delivery service or platform",
+      "examples": ["WeedMaps", "Dutchie", "GanjaDrop"],
+      "required": false,
+      "prompts": ["Which delivery service do you prefer?", "Name the courier."]
+    },
+    {
+      "name": "discount_type",
+      "type": "categorical",
+      "description": "Type of discount or promotion applied",
+      "examples": ["first-time", "veteran", "referral", "birthday"],
+      "required": false,
+      "prompts": ["What kind of discount do you have?", "Specify promotion type."]
+    },
+    {
+      "name": "cannabinoid_profile",
+      "type": "categorical",
+      "description": "Specific cannabinoid makeup or focus",
+      "examples": ["high-THC", "CBD-dominant", "balanced", "THC-free"],
+      "required": false,
+      "prompts": ["What cannabinoid profile do you want?", "Specify THC/CBD ratio."]
+    },
+    {
+      "name": "ritual_context",
+      "type": "categorical",
+      "description": "Cultural, spiritual, or social context for use",
+      "examples": ["meditation", "music festival", "creativity boost", "party"],
+      "required": false,
+      "prompts": ["In what context will you use it?", "Describe your ritual."]
+    },
+    {
+      "name": "session_setting",
+      "type": "categorical",
+      "description": "Physical or social setting of cannabis use",
+      "examples": ["beach", "party", "at home", "in nature"],
+      "required": false,
+      "prompts": ["Where will you consume?", "Describe your setting."]
+    },
+    {
+      "name": "hardware_type",
+      "type": "categorical",
+      "description": "Device or accessory used for consumption",
+      "examples": ["bong", "vape pen", "dab rig", "grinder"],
+      "required": false,
+      "prompts": ["What hardware will you use?", "Specify device."]
+    },
+    {
+      "name": "avatar_voice",
+      "type": "categorical",
+      "description": "Preferred voice style or tone of the AI assistant",
+      "examples": ["deep", "smooth", "playful", "robotic"],
+      "required": false,
+      "prompts": ["Choose your avatar voice.", "What tone do you prefer?"]
+    },
+    {
+      "name": "legal_status",
+      "type": "categorical",
+      "description": "Legal status of cannabis use or possession for user",
+      "examples": ["recreational legal", "medical cardholder", "prohibition zone"],
+      "required": true,
+      "prompts": ["What is your legal status?", "Are you legally allowed to use cannabis?"]
+    },
+    {
+      "name": "consumption_frequency",
+      "type": "categorical",
+      "description": "How often the user consumes cannabis",
+      "examples": ["daily", "weekends", "occasionally", "first-time"],
+      "required": false,
+      "prompts": ["How frequently do you consume?", "Describe your usage habits."]
+    },
+    {
+      "name": "microdosing_preference",
+      "type": "boolean",
+      "description": "Whether user prefers low-dose or microdosing approach",
+      "examples": [true, false],
+      "required": false,
+      "prompts": ["Do you prefer microdosing?", "Are you interested in low doses?"]
+    },
+    {
+      "name": "strain_lineage",
+      "type": "categorical",
+      "description": "Genetic heritage or parent strains of a cannabis strain",
+      "examples": ["OG Kush x Girl Scout Cookies", "Sour Diesel lineage"],
+      "required": false,
+      "prompts": ["Specify strain lineage if known.", "What are the parent strains?"]
+    },
+    {
+      "name": "seasonal_preference",
+      "type": "categorical",
+      "description": "Preferred seasonal use or strain association",
+      "examples": ["winter cozy", "summer outdoor", "420 season"],
+      "required": false,
+      "prompts": ["Do you have a seasonal preference?", "What season do you prefer for use?"]
+    },
+    {
+      "name": "community_role",
+      "type": "categorical",
+      "description": "User's role in cannabis communities or social spaces",
+      "examples": ["reviewer", "grower", "artist", "educator"],
+      "required": false,
+      "prompts": ["What is your community role?", "How do you participate in cannabis culture?"]
+    },
+    {
+      "name": "environment_concern",
+      "type": "boolean",
+      "description": "User preference for sustainable or eco-friendly cannabis options",
+      "examples": [true, false],
+      "required": false,
+      "prompts": ["Do you prefer environmentally friendly products?", "Is sustainability important to you?"]
+    }
+  ]
+}

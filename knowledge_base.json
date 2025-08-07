@@ -1,0 +1,303 @@
+{
+  "knowledge_base": {
+    "version": "2.5",
+    "last_updated": "2025-07-24",
+    "topics": [
+      {
+        "topic_id": "strain_info",
+        "title": "Cannabis Strain Information",
+        "description": "Comprehensive data on cannabis strains including genetics, effects, flavors, and usage.",
+        "entries": [
+          {
+            "id": "strain001",
+            "name": "Blue Dream",
+            "type": "Hybrid",
+            "genetics": "Sativa-dominant hybrid (Blueberry Indica x Haze Sativa)",
+            "thc_range": "17%-24%",
+            "cbd_content": "0.1%-0.3%",
+            "terpene_profile": ["Myrcene", "Pinene", "Caryophyllene"],
+            "flavor_profile": ["Berry", "Sweet", "Earthy"],
+            "effects": ["Relaxed", "Happy", "Uplifted", "Creative"],
+            "medical_uses": ["Stress", "Depression", "Pain", "Fatigue"],
+            "usage_tips": "Ideal for daytime use due to its balanced cerebral and body effects.",
+            "cultivation_notes": "Thrives indoors with moderate humidity; flowering time approximately 9-10 weeks."
+          },
+          {
+            "id": "strain002",
+            "name": "OG Kush",
+            "type": "Hybrid",
+            "genetics": "Indica-dominant hybrid",
+            "thc_range": "19%-26%",
+            "cbd_content": "0.1%-0.2%",
+            "terpene_profile": ["Limonene", "Myrcene", "Caryophyllene"],
+            "flavor_profile": ["Earthy", "Pine", "Citrus"],
+            "effects": ["Euphoric", "Relaxed", "Happy", "Sleepy"],
+            "medical_uses": ["Chronic pain", "Insomnia", "Anxiety"],
+            "usage_tips": "Best suited for evening use due to sedative properties.",
+            "cultivation_notes": "Moderate grow difficulty; prefers a warm climate and requires ample light."
+          },
+          {
+            "id": "strain003",
+            "name": "Sour Diesel",
+            "type": "Sativa",
+            "genetics": "Pure Sativa",
+            "thc_range": "20%-25%",
+            "cbd_content": "0.1%-0.3%",
+            "terpene_profile": ["Caryophyllene", "Limonene", "Myrcene"],
+            "flavor_profile": ["Diesel", "Pungent", "Citrus"],
+            "effects": ["Energetic", "Uplifted", "Creative", "Focused"],
+            "medical_uses": ["Fatigue", "Stress", "Depression"],
+            "usage_tips": "Perfect for daytime use and social occasions.",
+            "cultivation_notes": "Long flowering period (~10-12 weeks); requires skilled growers."
+          }
+        ]
+      },
+      {
+        "topic_id": "cannabis_chemistry",
+        "title": "Cannabinoids and Terpenes",
+        "description": "Detailed information about cannabinoids, terpenes, and their effects on the body and mind.",
+        "entries": [
+          {
+            "id": "chem001",
+            "name": "THC (Tetrahydrocannabinol)",
+            "type": "Cannabinoid",
+            "effects": ["Psychoactive", "Euphoria", "Pain relief", "Appetite stimulation"],
+            "medical_uses": ["Chronic pain", "Nausea", "Glaucoma"],
+            "notes": "Primary psychoactive compound in cannabis responsible for the 'high'."
+          },
+          {
+            "id": "chem002",
+            "name": "CBD (Cannabidiol)",
+            "type": "Cannabinoid",
+            "effects": ["Non-psychoactive", "Anti-inflammatory", "Anxiolytic", "Neuroprotective"],
+            "medical_uses": ["Epilepsy", "Anxiety", "Inflammation", "PTSD"],
+            "notes": "Does not produce a high; balances THC effects."
+          },
+          {
+            "id": "chem003",
+            "name": "Myrcene",
+            "type": "Terpene",
+            "effects": ["Sedative", "Muscle relaxant", "Anti-inflammatory"],
+            "flavor_profile": ["Earthy", "Musky", "Clove-like"],
+            "notes": "Most abundant terpene in many strains; enhances THC absorption."
+          },
+          {
+            "id": "chem004",
+            "name": "Limonene",
+            "type": "Terpene",
+            "effects": ["Elevated mood", "Stress relief", "Antibacterial"],
+            "flavor_profile": ["Citrus", "Lemon", "Orange"],
+            "notes": "Common in sativa strains; associated with uplifting effects."
+          }
+        ]
+      },
+      {
+        "topic_id": "consumption_methods",
+        "title": "Cannabis Consumption Methods",
+        "description": "Overview of various consumption methods with usage tips, onset times, and durations.",
+        "entries": [
+          {
+            "id": "consume001",
+            "method": "Smoking",
+            "description": "Inhaling combusted cannabis flower through joints, pipes, or bongs.",
+            "onset_time": "Immediate to 5 minutes",
+            "duration": "1 to 3 hours",
+            "advantages": ["Fast onset", "Easy dose control"],
+            "disadvantages": ["Irritates lungs", "Odor"]
+          },
+          {
+            "id": "consume002",
+            "method": "Vaping",
+            "description": "Heating cannabis concentrates or flower to release vapor without combustion.",
+            "onset_time": "Immediate to 5 minutes",
+            "duration": "1 to 3 hours",
+            "advantages": ["Less harmful than smoking", "Discreet"],
+            "disadvantages": ["Requires device", "Costlier"]
+          },
+          {
+            "id": "consume003",
+            "method": "Edibles",
+            "description": "Ingesting cannabis-infused food or beverages.",
+            "onset_time": "30 minutes to 2 hours",
+            "duration": "4 to 12 hours",
+            "advantages": ["Long-lasting effects", "No lung irritation"],
+            "disadvantages": ["Delayed onset", "Harder to dose"]
+          },
+          {
+            "id": "consume004",
+            "method": "Tinctures",
+            "description": "Alcohol or oil-based cannabis extracts taken sublingually.",
+            "onset_time": "15 to 45 minutes",
+            "duration": "2 to 6 hours",
+            "advantages": ["Discreet", "Precise dosing"],
+            "disadvantages": ["Taste may be strong"]
+          }
+        ]
+      },
+      {
+        "topic_id": "legal_and_safety",
+        "title": "Legal Regulations and Safety Guidelines",
+        "description": "Important information regarding cannabis legality and safe usage practices.",
+        "entries": [
+          {
+            "id": "legal001",
+            "jurisdiction": "United States - Federal",
+            "status": "Cannabis remains federally illegal under the Controlled Substances Act.",
+            "notes": "State laws may supersede; always comply with local regulations."
+          },
+          {
+            "id": "legal002",
+            "jurisdiction": "California",
+            "status": "Recreational and medical cannabis are legal for adults 21+.",
+            "possession_limits": "28.5 grams flower; 8 grams concentrate",
+            "notes": "Driving under influence is illegal."
+          },
+          {
+            "id": "safety001",
+            "topic": "Safe Consumption Practices",
+            "guidelines": [
+              "Start with low doses and go slow, especially with edibles.",
+              "Avoid mixing cannabis with alcohol or other substances.",
+              "Do not operate vehicles or heavy machinery while impaired.",
+              "Store cannabis securely and away from children and pets."
+            ]
+          },
+          {
+            "id": "safety002",
+            "topic": "Potential Side Effects",
+            "common_effects": [
+              "Dry mouth",
+              "Red eyes",
+              "Dizziness",
+              "Paranoia or anxiety (at high doses)"
+            ],
+            "management": [
+              "Stay hydrated",
+              "Use CBD-rich strains to balance effects",
+              "Rest in a safe, comfortable environment"
+            ]
+          }
+        ]
+      },
+      {
+        "topic_id": "cultivation",
+        "title": "Cannabis Cultivation and Grow Tips",
+        "description": "Guides on growing cannabis indoors and outdoors, covering environment, nutrients, and lifecycle.",
+        "entries": [
+          {
+            "id": "cult001",
+            "phase": "Seedling",
+            "description": "First stage after germination; seedlings require low light intensity and high humidity.",
+            "tips": [
+              "Keep temperature between 70-85°F",
+              "Maintain humidity around 65-70%",
+              "Avoid overwatering"
+            ]
+          },
+          {
+            "id": "cult002",
+            "phase": "Vegetative",
+            "description": "Growth stage where plants develop leaves and stems; requires more light and nutrients.",
+            "tips": [
+              "Provide 18-24 hours of light daily",
+              "Use nitrogen-rich fertilizers",
+              "Ensure proper airflow and temperature (70-85°F)"
+            ]
+          },
+          {
+            "id": "cult003",
+            "phase": "Flowering",
+            "description": "Plants develop buds; light cycles switch to 12 hours dark/light to induce flowering.",
+            "tips": [
+              "Use phosphorus and potassium-rich nutrients",
+              "Control humidity to 40-50% to prevent mold",
+              "Monitor trichomes to determine harvest time"
+            ]
+          },
+          {
+            "id": "cult004",
+            "harvest",
+            "description": "Final stage; buds are collected, dried, and cured for consumption.",
+            "tips": [
+              "Harvest when trichomes are cloudy or amber-colored",
+              "Dry in a dark, ventilated space at 60-70°F",
+              "Cure buds in airtight containers for 2-4 weeks"
+            ]
+          }
+        ]
+      },
+      {
+        "topic_id": "ecommerce",
+        "title": "GanjaGuru E-commerce and Marketplace",
+        "description": "Details on ordering, payment, shipping, and product returns within the GanjaGuru platform.",
+        "entries": [
+          {
+            "id": "ecom001",
+            "topic": "Ordering Process",
+            "steps": [
+              "Browse available products or use strain recommendations.",
+              "Select quantity and add to cart.",
+              "Proceed to checkout with preferred payment method.",
+              "Verify age and identity as required.",
+              "Receive confirmation and tracking info."
+            ]
+          },
+          {
+            "id": "ecom002",
+            "topic": "Payment Methods",
+            "options": [
+              "Credit/Debit Cards",
+              "Cryptocurrency (ETH, USDC)",
+              "Digital Wallets",
+              "Cash on Delivery (select regions)"
+            ]
+          },
+          {
+            "id": "ecom003",
+            "topic": "Shipping and Delivery",
+            "details": [
+              "Delivery times vary by location and product availability.",
+              "Tracking is provided for all shipments.",
+              "Discreet packaging is standard.",
+              "Compliance with local cannabis laws is mandatory."
+            ]
+          },
+          {
+            "id": "ecom004",
+            "topic": "Returns and Refunds",
+            "policy": [
+              "Returns accepted only for defective or incorrect items.",
+              "Refunds processed within 7 business days.",
+              "No returns on perishable or opened products."
+            ]
+          }
+        ]
+      },
+      {
+        "topic_id": "gamification",
+        "title": "GanjaGuru Gamification Features",
+        "description": "Interactive features designed to enhance learning and user engagement.",
+        "entries": [
+          {
+            "id": "game001",
+            "feature": "Strain Quests",
+            "description": "Guided challenges to explore strains, their effects, and profiles.",
+            "rewards": ["Badges", "Experience Points", "Exclusive Content"]
+          },
+          {
+            "id": "game002",
+            "feature": "Community Challenges",
+            "description": "Collaborative events and competitions to share knowledge and creativity.",
+            "rewards": ["Tokens", "Discounts", "Recognition"]
+          },
+          {
+            "id": "game003",
+            "feature": "Grow Room Simulator",
+            "description": "Virtual space to design and manage grow setups with realistic feedback.",
+            "benefits": ["Learn best practices", "Experiment risk-free"]
+          }
+        ]
+      }
+    ]
+  }
+}
